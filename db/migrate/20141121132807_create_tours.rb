@@ -4,7 +4,7 @@ class CreateTours < ActiveRecord::Migration
       t.string :title
       t.string :teaser
       t.text :description
-      t.string :url
+      t.text :url
 
       t.timestamps
     end
