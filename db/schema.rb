@@ -13,6 +13,9 @@
 
 ActiveRecord::Schema.define(version: 20141121133217) do
 
+  # These are extensions that must be enabled in order to support this database
+  enable_extension "plpgsql"
+
   create_table "categories", force: true do |t|
     t.string   "name"
     t.datetime "created_at"
@@ -26,14 +29,14 @@ ActiveRecord::Schema.define(version: 20141121133217) do
     t.datetime "updated_at"
   end
 
-  add_index "tour_categories", ["category_id"], name: "index_tour_categories_on_category_id"
-  add_index "tour_categories", ["tour_id"], name: "index_tour_categories_on_tour_id"
+  add_index "tour_categories", ["category_id"], name: "index_tour_categories_on_category_id", using: :btree
+  add_index "tour_categories", ["tour_id"], name: "index_tour_categories_on_tour_id", using: :btree
 
   create_table "tours", force: true do |t|
     t.string   "title"
     t.string   "teaser"
     t.text     "description"
-    t.text   "url"
+    t.text     "url"
     t.datetime "created_at"
     t.datetime "updated_at"
   end
