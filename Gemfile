@@ -44,6 +44,7 @@ group :development, :test do
   gem 'guard-rspec'
   gem 'faker'
   gem 'capybara'
+  gem 'sqlite3'
 
 end
 
